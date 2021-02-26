@@ -1,1 +1,1 @@
-print("EA Sports servers are trash")
+print('EA Sports servers are trash')
