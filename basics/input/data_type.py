@@ -10,5 +10,4 @@ height=input()
 # Ask user to entert heir weight
 print("How much do you weigh (in kilograms)?")
 weight=input()
-int(bmi=weight/height**2)
-print("/")
+bmi=weight/height**2 
