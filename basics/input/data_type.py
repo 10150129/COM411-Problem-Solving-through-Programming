@@ -1,13 +1,11 @@
-# Ask user to enter their name
+
 print("What is your name?")
 name=input()
-# Ask user to enter their age
 print("How old are you (in years)?")
-age=input()
-# Ask user to enter their height
+age= int (input())
 print("How tall are you (in meters)?")
-height=input()
-# Ask user to entert heir weight
+height= int (input())
 print("How much do you weigh (in kilograms)?")
-weight=input()
-bmi=weight/height**2 
+weight= int (input())
+bmi= float(weight()/height()**2)
+print("Name{} you are {} years old and your bmi is {} .")
