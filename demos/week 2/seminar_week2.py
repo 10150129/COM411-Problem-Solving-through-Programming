@@ -1,3 +1,6 @@
+#Piotr's code
+
+
 #Program that displays a menu and allows the user to either see a nice message, calculate areas of rectangle or triangle or displays the times table for a number.
 
 print("Please choose an option from the menu:\n\n1-Nice message\n2-Area of rectangle\n3-Area of triangle\n4-Times table")
@@ -19,21 +22,12 @@ elif option == 3:
   print("Enter the height of the triangle:")
   h = float(input())
   area = 0.5*b*h
-  print("The area of this triangle was {}".format(area))
+  print("The are of this triangle was {}".format(area))
 elif option == 4:
   print("What number would you like to see times table for?")
   n = int(input())
-  for i in range(1,11,1):
+  for i in range(1,11,1): #i=1 to i=10 generates numbers from 1 to 10
     print("{}*{} = {}".format(n,i,n*i))
 else:
   print("There is no such option. Go to Specsavers!")
-
-
-
-
-
-
-
-
-
 
