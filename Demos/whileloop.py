@@ -1,4 +1,8 @@
+#Piotr's code
+
+
 #While loop (and also For loop) can be used to have a repetition of a procedure in our code
+
 
 print("How many times to print the symbol?")
 x = int(input()) #x=3

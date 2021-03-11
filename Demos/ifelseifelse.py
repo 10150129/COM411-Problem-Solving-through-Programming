@@ -1,3 +1,5 @@
+#Piotr's code
+
 print("What is your name?")
 n = input()
 # print("Do you have a dog? (types True of False)")
@@ -17,3 +19,5 @@ elif len(n)< 3:
 else:  
   print("Your name is quiet okay")
 print("This is the END of the program!")
+
+
