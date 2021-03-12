@@ -1,13 +1,21 @@
-#TheFunction
-def greet_user():
-  print("Please enter your name")
-  name = input()
-  print("Hello" ,name)
+#What sound did I hear?
+#rumble
+#That was a loud rumble!
 
-#Call to function
-greet_user()
-greet_user()
-greet_user()
+def listen():
+  #Ask user for the sound
+  print("What sound did I hear?")
+  sound = input()
+
+  #Display the message
+  print("\nThat was a loud ", sound)
+#Call the function 
+listen()
+  
+
+    
+
+
 
 
 
