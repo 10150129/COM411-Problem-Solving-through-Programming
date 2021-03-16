@@ -25,13 +25,10 @@ def encrypt():
 
 print(encrypt (), encrypt())
 
-
-
 x=32
 y=35
 
 print(f"The prime between {x} and {y} is {findPrime(x,y)}")
-
 
 print("What is the number?")
 x=int(input())
