@@ -1,4 +1,4 @@
-#Piotr's code
+#Piotr's code - how to create a list using code
 
 #Define an empy list
 fruits = []

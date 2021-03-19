@@ -1,23 +1,24 @@
-#Piotr's code - how to add to the list
+#Sam' s code for a simple list
 
-def get_fruits():
-  fruits = []
-  print("How many fruits would you like to enter?")
-  n = int(input())
-  for i in range(4):
-    print("Type in the next fruit:")
-    fruits.append(input())
- 
-  #Print all items
-  print("Your fruits are {}".format(fruits))
+#Find the way
+#Two functions:
+#1st fucntion = directions
+#list directions: move forward, move backward, turn left, turn right
+#return function
 
-  #Print only few items by slicing 
-  print(f"Sliced list: {fruits[0:5]}")
+def directions():
+  directions = ["Move forward","Move backward","Turn left","Turn Right"]
+  return directions
 
-  #Print only few items by using negative index
-  print(f"Negative index:{fruits[-2:0]}")
 
-get_fruits()
+#2nd function = run (no parameters)
+#shoul call the first function - directions
+#display the list
+
+def run():
+  print(directions())
+
+run()
 
 
 
