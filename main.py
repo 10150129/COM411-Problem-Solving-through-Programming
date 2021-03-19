@@ -1,18 +1,28 @@
-#Sam's code - how to index a list
-#Beep and Bop Lab on SOL programming tabs
+#Sam's code on populate lists
+#Beep and Bop need to make their way from the maze
 
-def movements():
-  path = ["Move Forward", 10, "Move Backward", 5, "Move Left", 3, "Move Right", 1]
-  return path
+def directions():
+  directions = ["Move forward", "Move Backward", "Turn Left", "Turn Right"]
+  return directions
+
+def menu():
+  print("Please select a direction:")
+  dirs = directions()
+  for index in range(len(dirs)):
+    print("{}: {}".format(index, dirs[index]))
+    index = int(input())
+menu()
 
 def run():
-  print("Moving...")
-  path = movements()
-  print(f"{path[0]} for {path[1]} steps")
-  print(f"{path[2]} for {path[3]} steps")
-  print(f"{path[4]} for {path[5]} steps")
-  print(f"{path[6]} for {path[7]} steps")
-  print("stop")
+  route = []
+  print("Working out escape route...")
+  for count in range(5):
+    route.append(menu())
+  print(f"Escape route:{route}")
+
 run()
+
+
+
 
 
