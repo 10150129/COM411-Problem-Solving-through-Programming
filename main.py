@@ -30,16 +30,15 @@ def all_stds():
     all_students.append(generate_stds())
     print("To stop adding students type 0")
     x = input()
-    if x == '0'
+    if x == '0':
        break 
-       
   return all_students 
 
 print(all_stds)
 
 def print_students(lista):
   for std in lista:
-    print(f"{std[0]} earned a grade {std[1]})
+    print(f"{std[0]} earned a grade {std[1]}")
 
 print(print_students(all_stds()))
 
