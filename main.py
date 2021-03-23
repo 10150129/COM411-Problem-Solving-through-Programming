@@ -1,58 +1,30 @@
-#Piotr's Code - Recap (functions, lists, tuples)
+ #Piotr's code for Sets 
 
-#Program that invites a small database in the sense that it can:
-#insert new students and their marks
-#keep continually adding students
-#print out students name and their mark 
-#average mark of all students (calculate)
-#find the maximum mark among all students 
+#initialise an empty set 
+colours = set()
+print(type(colours))
 
-#all_students = [("Gary", 67), ("Uzma", 82), ("Mihai", 76)]
-#print(all_students)
+#initialise non-empty set 
+colors = {"blue", "red", "yellow"}
+#print(type(colors))
+#print(colors)
 
-def generate_stds():
-  print("Enter students name:")
-  name = input()
-  print("Enter grade:")
-  grade = int(input())
-  return name, grade 
+#adding elements to a set 
+colors.add("purple")
+colours.add("red")
+colours.add("black")
+colours.add("green")
 
+print(colours)
+print(colors)
 
-#to call the function
-#print(generate_stds())
-#t = generate_stds()
-#print(t)
+#union - joining two sets  
+set1 = colours.union(colors)
+print(set1)
 
-
-def all_stds():
-  all_students = []
-  while True:
-    all_students.append(generate_stds())
-    print("To stop adding students type 0")
-    x = input()
-    if x == '0':
-       break 
-  return all_students 
-
-print(all_stds)
-
-def print_students(lista):
-  for std in lista:
-    print(f"{std[0]} earned a grade {std[1]}")
-
-
-#print(print_students(all_stds()))
-
-
-def avr_mark(bob):
-  total = 0
-  for std in bob:
-    total += std[1]
-  return total/len(bob)
-
-print(avr_mark(all_stds()))    
-
-
+#intersection - finding common elements  
+set2 = colours.intersection(colors)
+print(set2)
 
 
 
