@@ -1,28 +1,47 @@
-#Sam's code on populate lists
-#Beep and Bop need to make their way from the maze
+#Piotr's Code - Recap (functions, lists, tuples)
 
-def directions():
-  directions = ["Move forward", "Move Backward", "Turn Left", "Turn Right"]
-  return directions
+#Program that invites a small database in the sense that it can:
+#insert new students and their marks
+#keep continually adding students
+#print out students name and their mark 
+#average mark of all students (calculate)
+#find the maximum mark among all students 
 
-def menu():
-  print("Please select a direction:")
-  dirs = directions()
-  for index in range(len(dirs)):
-    print("{}: {}".format(index, dirs[index]))
-    index = int(input())
-menu()
+#all_students = [("Gary", 67), ("Uzma", 82), ("Mihai", 76)]
+#print(all_students)
 
-def run():
-  route = []
-  print("Working out escape route...")
-  for count in range(5):
-    route.append(menu())
-  print(f"Escape route:{route}")
-
-run()
+def generate_stds():
+  print("Enter students name:")
+  name = input()
+  print("Enter grade:")
+  grade = int(input())
+  return name, grade 
 
 
+#to call the function
+#print(generate_stds())
+#t = generate_stds()
+#print(t)
+
+
+def all_stds():
+  all_students = []
+  while True:
+    all_students.append(generate_stds())
+    print("To stop adding students type 0")
+    x = input()
+    if x == '0'
+       break 
+       
+  return all_students 
+
+print(all_stds)
+
+def print_students(lista):
+  for std in lista:
+    print(f"{std[0]} earned a grade {std[1]})
+
+print(print_students(all_stds()))
 
 
 
