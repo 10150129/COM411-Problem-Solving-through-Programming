@@ -27,15 +27,25 @@ Humpty Dumpty sat on the wall…
 lista = song.lower().replace("\"", "").replace("\'", "").replace(",", "").split()
 
 
-print(set(lista))
+#print(set(lista))
 #this will give you nice clean words with no comas 
 
 word_dict = {}
 
+#for word in lista:
+  #if word in word_dict:
+   # word_dict[word] += 1
+  #else:
+    #word_dict[word] = 1
+
+
+
 for item in lista:
   word_dict[item] = word_dict.get(item, 0) + 1
 
-print(word_dict)
+print(dict(sorted(word_dict.items(), key = lambda x: -x[1])))
+#least used into the most used word 
+#if you add minus 1 it shows the most used to least used 
 
 
 
