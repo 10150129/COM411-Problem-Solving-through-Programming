@@ -1,51 +1,60 @@
-#text analysis
+# week 6 Piotr's code for a dictionary, simulatimg a server(data)
 
-song = '''
-Humpty Dumpty sat on the wall
-Humpty Dumpty had a great, great fall and
-All the king's horses and all the king's men
-Couldn't put Humpty together again
-Humpty Dumpty and Betty Louise
-Stole a Sony and some Camembert cheese
-And she said "Humpty baby
-Take me to the river
-Cause I like the way it runs
-Take me to the river
-You know I like the way it runs"
-He said "ah, ooh, everything's going my way"
-He said "maybe it's my lucky day"
-I said "anything you want I can give"
-She said "I want to take your picture, mm, just for me"
-He said "anything"
-She said "up there baby get on the wall babe"
-Humpty Dumpty sat on the wall…
-'''
+def shop():
+  items = {
+    "Eggs": 1.99,
+    "Milk": 0.99,
+    "Cereal": 2.99,
+    "Steak": 4.79,
+    "Beer": 2.99,
+    "Sausage": 1.29,
+    "Vinegar": 2.49,
+    "Bread": 1.49
+  }
+  return items 
 
-#print(song)
-#do some formatting to the song
-#the word 'take', some have upper case other lower case, I want to make them all lower cases letters
-lista = song.lower().replace("\"", "").replace("\'", "").replace(",", "").split()
+def view_all(products ={}):
+  for i in products:
+    print(i)
 
+#view_all(shop())
+def basket():
+  basket = []
+  while True:
+    item = input("Enter item (or \"stop\"): ")
+    if item == "stop":
+      break
+    else:
+      basket.append(item)
+  return basket
 
-#print(set(lista))
-#this will give you nice clean words with no comas 
-
-word_dict = {}
-
-#for word in lista:
-  #if word in word_dict:
-   # word_dict[word] += 1
-  #else:
-    #word_dict[word] = 1
+def till(basket =[]):
+  shoplist = shop()
+  total = 0.0
+  for item in basket:
+    print(shoplist[item])
+    total += shoplist[item]
+  return total
 
 
+def run():
+  print("Welkome to Pete's shop! Please have a look around and add items you like!")
+  view_all(shop())
+  chosen_items = basket()
+  while True:
+    print("Are you ready to pay?")
+    if input().lower() == "yes":
+      to_pay = till(chosen_items)
+      print(f"Please pay £{to_pay:.2f} by cash or card")
+      break
+    else:
+      chosen_items += basket()
 
-for item in lista:
-  word_dict[item] = word_dict.get(item, 0) + 1
+run()
 
-print(dict(sorted(word_dict.items(), key = lambda x: -x[1])))
-#least used into the most used word 
-#if you add minus 1 it shows the most used to least used 
+
+
+
 
 
 
