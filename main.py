@@ -56,7 +56,15 @@ def max_rated(database = {}):
     if details["Rating"][0] > max_rating:
       max_rating = details["Rating"][0]
       movie = details
-  return movie         
+  return movie  
+
+def movie_print(movie = {}):
+  print("*"*10 + " "*2 + "{}".format(movie["Title"]) + " "*2 + "*"*10)
+  for item in movie.items():
+    print(f"{item[0]} ---------->  {item[1]}")
+
+
+
 
 def imdb():
   imdb = {}
@@ -68,7 +76,8 @@ def imdb():
       m_title = input("What is the title of the movie?")
       imdb[m_title] = new_movie(m_title)
     elif option == 2:
-      print(f"Suitable movie: {movie_search(imdb)}")
+      print("Suitable movie:\n")
+      movie_print(movie_search(imdb))
     elif option == 3:
       print(imdb)
     elif option == 4:
