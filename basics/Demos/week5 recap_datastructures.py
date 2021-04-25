@@ -2,7 +2,7 @@
 
 #lists
 #a list is an indexed, mutable data structure in wich you can out some data(ex: names)
-# you can initialize a list with square bracketes
+# you can initialize a list with square brackets
 # with a list we can access individual elements from it
 #you can also append your list
 #you can access, you can modify your list as you please
