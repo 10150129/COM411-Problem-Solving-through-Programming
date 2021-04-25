@@ -35,27 +35,3 @@ print(tuplex)
 set1 = {"green", "blue", 24, 99, 7}
 set1.add("red")
 print(set1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
