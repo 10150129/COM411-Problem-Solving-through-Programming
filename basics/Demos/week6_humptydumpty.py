@@ -37,33 +37,3 @@ for item in lista:
 
 print(word_dict)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
