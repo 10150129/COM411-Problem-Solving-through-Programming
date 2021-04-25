@@ -1,56 +1,108 @@
-# week 6 Piotr's code for a dictionary, simulatimg a server(data)
+#Piotr's code to build a movie then put them together into a database
+def actors():
+  real = input("Name:")
+  role = input("Role:")
+  return real,role
 
-def shop():
-  items = {
-    "Eggs": 1.99,
-    "Milk": 0.99,
-    "Cereal": 2.99,
-    "Steak": 4.79,
-    "Beer": 2.99,
-    "Sausage": 1.29,
-    "Vinegar": 2.49,
-    "Bread": 1.49
-  }
-  return items 
+def rate_a_movie(title):
+  return float(input(f"What would you rate \"{title}\"?\n"))
 
-def view_all(products ={}):
-  for i in products:
-    print(i)
+def new_movie(t):
+  #function to create a movie page
+  movie = {}
+  movie["Title"] = t
+  #movie["Released"] = input("What year was it released?\n")
+  movie["Genre"] = input("What genre is it?\n")
+  #movie["Duration"] = input("How long is this movie?\n")
+  actor_list = []
+  i = 0
+  print("Provide details of the cast. How many actors are in the cast?")
+  n=int(input())
+  while i < n:
+    actor_list.append(actors())
+    i+=1
+  movie["Actors"] = actor_list  
+  movie["Rating"] = 5.0, 0
+  return movie
 
-#view_all(shop())
-def basket():
-  basket = []
+def movie_search(database = {}):
+  print("Search by: Title, Genre or Actor?")
+  opt = input()
+  movie = {}
+  if opt.lower() == "title":
+    t = input("Enter the title:")
+    if t in database:
+      movie = database[t]
+    else:
+      print("The database contains no info about this movie :(")  
+  elif opt.lower() == "genre":
+    g = input("Enter the genre:")
+    for details in database.values():
+      if details["Genre"] == g:
+        movie = details
+  elif opt.lower() == "actor":
+    a = input("Enter actor's name:")
+    for details in database.values():
+      for actor in details["Actors"]:
+        if actor[0] == a:
+          movie = details
+  return movie  
+
+
+def max_rated(database = {}):
+  max_rating = 0
+  movie = {}
+  for details in database.values():
+    if details["Rating"][0] > max_rating:
+      max_rating = details["Rating"][0]
+      movie = details
+  return movie         
+
+def imdb():
+  imdb = {}
+  print("Welcome to the best movie database!\n\n")
   while True:
-    item = input("Enter item (or \"stop\"): ")
-    if item == "stop":
+    print("Choose an item from the menu:\n1-Add a movie\n2-Search for a movie\n3-Display all movies\n4-Get the top rated movies\n5-Rate a movie\n9-Exit")
+    option = int(input())
+    if option == 1:
+      m_title = input("What is the title of the movie?")
+      imdb[m_title] = new_movie(m_title)
+    elif option == 2:
+      print(f"Suitable movie: {movie_search(imdb)}")
+    elif option == 3:
+      print(imdb)
+    elif option == 4:
+      print("You chose to find out the highest rated movie\nThis is the one:\n")
+      print(max_rated(imdb))
+    elif option == 5:
+      print("You are rating a movie. Please be gentle")
+      m = movie_search(imdb)
+      current_rating = m["Rating"][0]
+      number_ratings = m["Rating"][1]
+      x = rate_a_movie(m["Title"])
+      new_rating = (number_ratings*current_rating + x)/(number_ratings+1)
+      m["Rating"] = new_rating,number_ratings+1
+      imdb[m["Title"]] = m
+
+    elif option == 9:
       break
     else:
-      basket.append(item)
-  return basket
+      print("Invalid option. Try again you noob.\n")
+    return imdb 
 
-def till(basket =[]):
-  shoplist = shop()
-  total = 0.0
-  for item in basket:
-    print(shoplist[item])
-    total += shoplist[item]
-  return total
+imdb()      
 
 
-def run():
-  print("Welkome to Pete's shop! Please have a look around and add items you like!")
-  view_all(shop())
-  chosen_items = basket()
-  while True:
-    print("Are you ready to pay?")
-    if input().lower() == "yes":
-      to_pay = till(chosen_items)
-      print(f"Please pay £{to_pay:.2f} by cash or card")
-      break
-    else:
-      chosen_items += basket()
 
-run()
+
+
+
+
+
+
+
+
+
 
 
 
