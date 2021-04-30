@@ -1,4 +1,4 @@
-#Piotr's code on matplotlib, how to visualize data in matplotlib
+#Piotr's code on matplotlib, how to visualize data in matplotlib (which is a library)
 #plt.plot
 
 import matplotlib.pyplot as plt

@@ -1,17 +1,58 @@
-
-#Piotr's code on matplotlib, how to visualize data in matplotlib
+#Sam code activity 3 in week 8 with matplotlib 
 
 import matplotlib.pyplot as plt
 
+def coordinates():
+  print("Please enter an x value:")
+  x=int(input())
 
-labels = ("Lithuania", "Romania", "Poland", "Bangladesh", "Brazil", "Colombia", "Others")
+  print("Please enter a y value")
+  y=int(input())
+  return(x,y)
 
-data = [2,17,1,2,2,2,6]
+def path():
+  print("retrieving path...")
+  x_values=[]
+  y_values=[]
+  for count in range(4):
+    data=coordinates()
+    x_values.append(data[0])
+    y_values.append(data[1])
+  return[x_values, y_values]
+
+def run():
+  values=path()
+  plt.plot(values[0], values[1], "r--o")
+  plt.show()
+
+run()
 
 
-plt.pie(data, labels = x, explode = [0.1,0.2,0.3,0.4,0.5,0.6,0.7]
 
-plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
