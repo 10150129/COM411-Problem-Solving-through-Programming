@@ -33,6 +33,8 @@ class Person:
 
 if __name__ == "__main__":
 
+
+
 Piotr = Person("Piotr", 66, 81, 65)
 Anca = Person("Anca", 18)
 Mihai = Person("Mihai")
@@ -48,13 +50,3 @@ Piotr.hello()
 
 Tim.eat("Lasagne", 2)
 Tim.hello()
-
-
-
-
-
-
-
-
-
-
